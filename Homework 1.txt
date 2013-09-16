@@ -1,4 +1,45 @@
 -- Homework 1
 -- Kenneth Brooks
--- 1
- 
+-- 
+1. Select Customers.*
+From Customers
+
+2. Select Agents.name, Agents.city
+From Agents
+Where Agents.name = 'Smith'
+
+3. Select Products.pid, Products.name, Products.Quantity
+From Products
+Where Products.priceUSD > '1.25'
+
+4. Select Orders.ordno, Orders.aid
+From Orders
+
+5. Select Customers.name, Customers.city
+From Customers
+Where Customers.city <> 'Dallas'
+
+6. Select Agents.name
+From Agents
+Where Agents.city = 'New York'
+Or Agents.city = 'Newark'
+
+7. Select Products.*
+From Products
+Where Products.city <> 'New York'
+And Products.city <> 'Newark'
+And Products.priceUSD < '1.00'
+
+8. Select Orders.*
+From Orders
+Where Orders.mon = 'jan'
+Or Orders.mon = 'mar'
+
+9. Select Orders.*
+From Orders
+Where Orders.mon = 'feb'
+And Orders.dollars < '100'
+
+10. Select Orders.*
+from Orders
+where Orders.cid = 'C005'
