@@ -51,4 +51,15 @@ INSERT INTO People(Pid, Firstname, Lastname, Hiredate, Did)
   VALUES('5', 'Matt', 'Brooks', '11/11/2014', 'B');
   
   
---Insert FY
+--Insert Fiscal Year
+INSERT INTO FY(year, start, enddate)
+  VALUES('2012', '7/1/11', '6/30/12');
+  
+INSERT INTO FY(year, start, enddate)
+  VALUES('2013', '7/1/12', '6/30/13');
+  
+INSERT INTO FY(year, start, enddate)
+  VALUES('2014', '7/1/13', '6/30/14');
+  
+INSERT INTO FY(year, start, enddate)
+  VALUES('2015', '7/1/14', '6/30/15');
