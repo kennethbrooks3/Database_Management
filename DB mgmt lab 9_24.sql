@@ -77,6 +77,10 @@ Where people.did = departments.did
   AND fy.start <= people.hiredate
   
 --List all department names and the neumber of people in each. 
+Select departments.name, count(people.*)
+FROM departments, people
+Where people.Did = Departments.Did
+Group by Departments.name
 --List all fiscal years and the number of people hired in each time span. 
 --List all fiscal years and the number of departments founded in that time span. 
 --List all departments with no people.
