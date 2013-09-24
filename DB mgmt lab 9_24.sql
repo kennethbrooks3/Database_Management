@@ -1,5 +1,5 @@
 create table departments(
-    Did varchar*(1) not null primary key,
+    Did varchar(1) not null primary key,
     Name varchar(20) not null,
     dateFormed date
 );
@@ -10,16 +10,16 @@ Create Table people(
     firstname varchar(20),
     lastname varchar(20),
     hiredate date, 
-    Did varchar(1), not null references Departments(Did),
+    Did varchar(1) not null references Departments(Did),
    primary key(pid)
 );
 
 --FY
 Create table FY(
-    year date, 
+    year int not null, 
     start date,
     enddate date,
-   Primary key(year),
+   Primary key(year)
 );
     
     
@@ -63,3 +63,22 @@ INSERT INTO FY(year, start, enddate)
   
 INSERT INTO FY(year, start, enddate)
   VALUES('2015', '7/1/14', '6/30/15');
+  
+--List all people, the date they were hired, and their department.
+Select people.firstname, people.lastname, people.hiredate, departments.name
+From people, departments
+Where people.Did = departments.did
+
+--List all people, the fiscal year in which they were hired, and their department.
+Select people.firstname, people.lastname, FY.year, departments.name
+From people, departments, FY
+Where people.did = departments.did
+  AND FY.enddate >= people.hiredate
+  AND fy.start <= people.hiredate
+  
+--List all department names and the neumber of people in each. 
+--List all fiscal years and the number of people hired in each time span. 
+--List all fiscal years and the number of departments founded in that time span. 
+--List all departments with no people.
+--List all people with no department.
+--List all people hired before their department was founded.
